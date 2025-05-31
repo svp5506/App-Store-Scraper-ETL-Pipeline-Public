@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Store Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+        .container {
+            overflow-x: auto;
+        }
+        @media screen and (max-width: 600px) {
+            table {
+                font-size: 0.8em;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>App Store Stats</h1>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>App Name</th>
+                    <th>Overall Rating</th>
+                    <th>iOS Rating</th>
+                    <th>iOS Reviews</th>
+                    <th>Android Rating</th>
+                    <th>Android Reviews</th>
+                    <th>Total Reviews</th>
+                    <th>iOS Rank</th>
+                    <th>Date</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for app in app_stats %}
+                <tr>
+                    <td>{{ app.app_name }}</td>
+                    <td>{{ "%.2f"|format(app.overall_app_rating) }}</td>
+                    <td>{{ "%.2f"|format(app.ios_app_rating) }}</td>
+                    <td>{{ app.ios_total_reviews|format_number }}</td>
+                    <td>{{ "%.2f"|format(app.android_app_rating) }}</td>
+                    <td>{{ app.android_total_reviews|format_number }}</td>
+                    <td>{{ app.combined_total_reviews|format_number }}</td>
+                    <td>{{ app.ios_app_rank|format_number if app.ios_app_rank else 'N/A' }}</td>
+                    <td>{{ app.date }}</td>
+                    <td>{{ app.timestamp|format_datetime }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
