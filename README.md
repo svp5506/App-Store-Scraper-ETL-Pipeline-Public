@@ -65,7 +65,8 @@ This project uses an automated ETL (Extract, Transform, Load) process to keep yo
 
 3.  **Set up PostgreSQL:**
     -   Ensure you have a PostgreSQL database created.
-    -   Set the `DATABASE_URL` environment variable to your database connection string (e.g., `postgresql://user:password@host:port/database`).
+    -   Set the DATABASE_URL environment variable to your database connection string (e.g., postgresql://user:password@host:port/database). This is typically used for deployment (e.g., Heroku) and is the primary recommended method.
+    -   For local development or alternative setups where environment variables are not used, you may need to add or update your database URL directly within the app.py and scraper.py files where the database connection is initialized.
 
 4.  **Run the scraper:**
     ```bash
