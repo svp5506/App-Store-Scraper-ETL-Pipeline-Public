@@ -12,6 +12,12 @@ This project scrapes app ratings, review statistics, and rankings from the iOS A
 
 ---
 
+## 📊 Data View
+
+You can also view the latest app stats directly in a tabular format via this [Heroku DataClip](https://data.heroku.com/dataclips/ctivnnjqlkpalkxnltdlboovepmn).
+
+---
+
 ## ⚙️ How the ETL Process Works
 
 This project uses an automated ETL (Extract, Transform, Load) process to keep your app performance data up-to-date:
@@ -101,9 +107,4 @@ This project uses an automated ETL (Extract, Transform, Load) process to keep yo
     }
     ```
 -   **To customize the web dashboard's appearance:** Modify the HTML and CSS within `templates/index.html`.
-
----
-
-## 📊 Data View
-
-You can also view the latest app stats directly in a tabular format via this [Heroku DataClip](https://data.heroku.com/dataclips/ctivnnjqlkpalkxnltdlboovepmn).
+  
