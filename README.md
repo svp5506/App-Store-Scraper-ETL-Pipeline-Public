@@ -14,7 +14,7 @@ This project scrapes app ratings, review statistics, and rankings from the iOS A
 
 ## 📊 Data View
 
-You can also view the latest app stats directly in a tabular format via this [Heroku DataClip](https://data.heroku.com/dataclips/ctivnnjqlkpalkxnltdlboovepmn).
+View the latest app stats directly in a tabular format via this [Heroku DataClip](https://data.heroku.com/dataclips/ctivnnjqlkpalkxnltdlboovepmn).
 
 ---
 
