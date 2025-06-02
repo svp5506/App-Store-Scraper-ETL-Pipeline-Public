@@ -32,8 +32,7 @@ This project uses an automated ETL (Extract, Transform, Load) process to keep yo
 -   Scrapes ratings, reviews, and rankings for both iOS and Android apps.
 -   Stores daily statistics in a PostgreSQL database.
 -   Provides a web dashboard to view and compare app statistics.
--   Offers an API endpoint to fetch statistics in JSON format.
-
+  
 ---
 
 ## 📁 Project Structure
@@ -85,27 +84,6 @@ This project uses an automated ETL (Extract, Transform, Load) process to keep yo
 
 6.  **View the dashboard:**
     Open your web browser and navigate to [http://localhost:5000](http://localhost:5000).
-
----
-
-## 🔌 API Endpoints
-
--   **`GET /api/stats`**: Returns the latest statistics for all apps as JSON (from `dataDetailed.json`).
-    ```json
-    // Example Response Snippet
-    {
-      "AppName1": {
-        "ios": { "rating": 4.5, "reviews": 1200, "rank": 5 },
-        "android": { "rating": 4.2, "reviews": 2500, "rank": 8 },
-        "combined_rating": 4.3,
-        "total_reviews": 3700
-      },
-      // ... more apps
-    }
-    ```
-
--   **`GET /api/stats?date=YYYY-MM-DD`**: Returns statistics for all apps on a specific date (from the database).
--   **`GET /api/stats?date=YYYY-MM-DD&app_name=App+Name`**: Returns statistics for a specific app on a specific date (from the database).
 
 ---
 
